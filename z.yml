@@ -1,0 +1,15 @@
+---
+description: Add support for ST Nucleo F429ZI board
+fullname: board.zerynth.st_nucleof429zi
+info:
+    board: ST Nucleo F429ZI
+    chip_manufacturer: ST Microelectronics
+    device: stm32f429
+    family_type: ARM Cortex M4
+keywords:
+- board
+- nucleo
+- stm
+- f429zi
+title: ST Nucleo F429ZI Support Package
+...
