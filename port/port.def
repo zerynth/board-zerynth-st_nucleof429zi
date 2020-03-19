@@ -2,7 +2,7 @@
 
 ////LAYOUT: st_nucleof429zi
 ////PERIPHERALS: SERIAL0 SERIAL1 SERIAL2 SERIAL3 SERIAL4 SERIAL5 ADC0 PWMD0 ICUD0 SPI0 SPI1 SPI2 SPI3 SPI4 I2C0 I2C1 I2C2 DAC0 DAC1
-////CDEFINES: STM32F429xx
+////CDEFINES: STM32F42x
 
 const PinInfo const _vhalpinmap[] STORED = {
     // CN10
@@ -44,7 +44,7 @@ const PinInfo const _vhalpinmap[] STORED = {
     /* D31  */ MAKE_PIN(PE, 2, HAS_EXT),
     /* D32  */ MAKE_PIN(PA, 0, HAS_EXT | HAS_ATM),
     /* D33  */ MAKE_PIN(PB, 0, HAS_EXT | HAS_PWM),
-    /* D34  */ MAKE_PIN(PE, 0, HAS_EXT),
+    /* D34  */ MAKE_PIN(PE, 0, HAS_EXT),    //uart8 rx
     /* D35  */ MAKE_PIN(PB, 11, HAS_EXT | HAS_ATM | HAS_I2C), // SDA - I2C2
     /* D36  */ MAKE_PIN(PB, 10, HAS_EXT | HAS_ATM | HAS_I2C), // SCL - I2C2
     /* D37  */ MAKE_PIN(PE, 15, HAS_EXT),
@@ -117,7 +117,7 @@ const PinInfo const _vhalpinmap[] STORED = {
     /* D96  */ MAKE_PIN(PA, 1, HAS_EXT | HAS_ATM | HAS_ADC),
     /* D97  */ MAKE_PIN(PH, 1, HAS_EXT),
     /* D98  */ MAKE_PIN(PC, 1, HAS_EXT | HAS_ADC),
-    /* D99  */ MAKE_PIN(PE, 1, HAS_EXT),
+    /* D99  */ MAKE_PIN(PE, 1, HAS_EXT),  //uart8 tx
     /* D100 */ MAKE_PIN(PG, 15, HAS_EXT),
     /* D101 */ MAKE_PIN(PG, 12, HAS_EXT),
     /* D102 */ MAKE_PIN(PG, 10, HAS_EXT),
@@ -167,9 +167,9 @@ const PinClass const _spiclass[] STORED = {
     /* MOSI0 */ MAKE_PIN_CLASS(11, 1, 0, 5),
     /* MISO0 */ MAKE_PIN_CLASS(12, 1, 0, 5),
     /* SCLK0 */ MAKE_PIN_CLASS(13, 1, 0, 5),
-    /* MOSI1 */ MAKE_PIN_CLASS(22, 1, 0, 5),
-    /* MISO1 */ MAKE_PIN_CLASS(25, 1, 0, 5),
-    /* SCLK1 */ MAKE_PIN_CLASS(23, 1, 0, 5),
+    /* MOSI1 */ MAKE_PIN_CLASS(22, 3, 0, 6),
+    /* MISO1 */ MAKE_PIN_CLASS(25, 3, 0, 6),
+    /* SCLK1 */ MAKE_PIN_CLASS(23, 3, 0, 6),
     /* MOSI2 */ MAKE_PIN_CLASS(47, 3, 0, 6),
     /* MISO2 */ MAKE_PIN_CLASS(46, 3, 0, 6),
     /* SCLK2 */ MAKE_PIN_CLASS(45, 3, 0, 6),
@@ -278,6 +278,12 @@ const PinClass const _serclass[] STORED = {
     /* TX4 */ MAKE_PIN_CLASS(47, 5, 0, 8),
     /* RX5 */ MAKE_PIN_CLASS(52, 2, 0, 7),
     /* TX5 */ MAKE_PIN_CLASS(53, 2, 0, 7),
+    /* RX6 */ MAKE_PIN_CLASS(41, 7, 0, 8),
+    /* TX6 */ MAKE_PIN_CLASS(42, 7, 0, 8),
+    /* RX7 */ MAKE_PIN_CLASS(34, 8, 0, 8),
+    /* TX7 */ MAKE_PIN_CLASS(99, 8, 0, 8),
+    /* RX8 */ MAKE_PIN_CLASS(78, 1, 0, 7),
+    /* TX8 */ MAKE_PIN_CLASS(75, 1, 0, 7),
 };
 
 const PinClass const _dacclass[] STORED = {
